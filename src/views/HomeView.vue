@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { RouteNames } from "@/router";
-import { Icon } from "@iconify/vue";
 import { useHead } from "@vueuse/head";
-import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
-
 useHead({ title: t("home.title") });
 </script>
 
@@ -16,7 +12,5 @@ useHead({ title: t("home.title") });
       <span class="text-xl">{{ $t("home.title") }}</span>
     </div>
     <p>{{ $t("home.welcome") }}</p>
-
-    <RouterLink :to="{ name: RouteNames.About }">{{ $t("about.title") }}</RouterLink>
   </main>
 </template>
