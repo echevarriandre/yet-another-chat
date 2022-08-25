@@ -1,0 +1,6 @@
+home:
+  title: Home
+  welcome: Welcome
+about:
+  title: About
+  description: This is my Vue3 template bundled with tailwindcss. It also includes vueuse, I18n, vue-router, pinia, iconify and others.

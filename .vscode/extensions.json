@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "antfu.iconify",
+    "lokalise.i18n-ally",
+  ]
+}

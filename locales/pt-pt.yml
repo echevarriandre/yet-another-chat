@@ -1,0 +1,8 @@
+home:
+  welcome: Bem vindo
+  title: Casa
+about:
+  description: >-
+    Este é o meu modelo para Vue3 com tailwindcss. Também inclui vueuse, I18n,
+    vue-router, pinia, iconify e outros.
+  title: Acerca
