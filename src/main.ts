@@ -1,4 +1,5 @@
 import "@/assets/base.css";
+import { useNavigatorLanguage } from "@vueuse/core";
 import { createHead } from "@vueuse/head";
 import { createPinia } from "pinia";
 import { createApp } from "vue";
@@ -20,7 +21,7 @@ const messages = Object.fromEntries(
 );
 const i18n = createI18n({
   legacy: false,
-  locale: "pt-PT",
+  locale: useNavigatorLanguage().language.value,
   fallbackLocale: "en-US",
   messages,
   globalInjection: true,

@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply font-rubik;
+* {
+  @apply focus-visible:outline-none;
+}
+
+html,
+body {
+  @apply h-full w-full font-rubik;
+}
+
+body {
+  @apply flex justify-center;
+}
+
+#app {
+  @apply relative top-32 h-full w-80 sm:w-96;
 }

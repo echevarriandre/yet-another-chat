@@ -2,3 +2,5 @@ login:
   title: Yet Another Chat
   usernameInput: Username
   buttonLogin: Enter
+chat:
+  buttonEnterChat: Ask to talk

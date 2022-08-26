@@ -1,13 +1,14 @@
 <template>
-  <div class="relative mb-2 mt-6 flex flex-col">
+  <div class="relative flex flex-col">
     <input
       :id="label + '-input'"
-      v-model="value"
+      :value="modelValue"
+      @input="updateValue"
       :type="type"
       :placeholder="label"
       :class="[
         inputClasses,
-        'peer rounded-lg border-2 border-transparent bg-slate-100 placeholder-transparent transition duration-300 focus:bg-white focus:outline-none focus:ring focus:ring-slate-200 disabled:text-slate-600',
+        'peer rounded-lg border-2 border-transparent bg-slate-100 placeholder-transparent transition duration-200 focus:bg-white focus:ring focus:ring-slate-200 disabled:text-slate-600',
         { 'hover:bg-white hover:ring hover:ring-slate-200': !disabled },
         [label ? 'px-4 pb-2 pt-5' : 'p-4'],
       ]"
@@ -35,7 +36,8 @@ defineProps({
   required: { type: Boolean, default: false },
 });
 
-const value = $ref("");
-const emit = defineEmits(["update:modelValue"]);
-watchEffect(() => emit("update:modelValue", value));
+const emit = defineEmits<{ (e: "update:modelValue", value: string): void }>();
+function updateValue(event: Event) {
+  emit("update:modelValue", (event.target as HTMLInputElement).value);
+}
 </script>
