@@ -11,7 +11,7 @@ import { RouterView } from "vue-router";
   <main class="flex w-full justify-center">
     <RouterView />
   </main>
-  <footer class="flex w-full justify-center p-2 text-xs font-thin text-slate-300">
+  <footer class="mt-20 flex w-full justify-center p-2 text-xs font-thin text-slate-300">
     <span>made by&nbsp;</span>
     <a
       href="https://echevarria.pt"
