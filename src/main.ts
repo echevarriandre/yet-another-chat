@@ -20,8 +20,8 @@ const messages = Object.fromEntries(
 );
 const i18n = createI18n({
   legacy: false,
-  locale: "en",
-  fallbackLocale: "en",
+  locale: "pt-PT",
+  fallbackLocale: "en-US",
   messages,
   globalInjection: true,
 });

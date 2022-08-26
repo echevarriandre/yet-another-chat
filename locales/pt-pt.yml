@@ -1,3 +1,4 @@
-home:
-  welcome: Bem vindo
-  title: Casa
+login:
+  title: Yet Another Chat
+  usernameInput: Nome de Utilizador
+  buttonLogin: Entrar
