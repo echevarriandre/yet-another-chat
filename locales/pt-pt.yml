@@ -4,3 +4,4 @@ login:
   buttonLogin: Entrar
 chat:
   buttonEnterChat: Pedir para conversar
+  noUsers: Não existem utilizadores disponiveis

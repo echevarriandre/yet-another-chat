@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouteNames } from "@/router";
+import { useServerStore } from "@/stores/server";
 import { useUserStore } from "@/stores/user";
 import { useRouter } from "vue-router";
 import TButton from "../components/ui/t-button.vue";
@@ -8,10 +9,13 @@ import TInput from "../components/ui/t-input.vue";
 const username = $ref("");
 const userStore = useUserStore();
 const router = useRouter();
+const server = useServerStore();
 
 function login() {
   // TODO validate with FormKit or similar package
   if (!username) return;
+
+  server.connectToChat(username);
 
   userStore.username = username;
   router.push(RouteNames.Chat);
