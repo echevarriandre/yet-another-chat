@@ -5,14 +5,14 @@ import { RouterView } from "vue-router";
 <template>
   <header class="mb-10">
     <h1 class="text-center text-4xl text-black sm:text-5xl">
-      {{ $t("login.title") }}
+      {{ $t("base-layout.title") }}
     </h1>
   </header>
   <main class="flex w-full justify-center">
     <RouterView />
   </main>
   <footer class="mt-20 flex w-full justify-center p-2 text-xs font-thin text-slate-300">
-    <span>made by&nbsp;</span>
+    <span>{{ $t("base-layout.footer") }}&nbsp;</span>
     <a
       href="https://echevarria.pt"
       target="_blank"

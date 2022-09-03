@@ -1,5 +1,7 @@
-login:
+base-layout:
   title: Yet Another Chat
+  footer: made by
+login:
   usernameInput: Username
   buttonLogin: Enter
 chat:
