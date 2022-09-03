@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import UserList from "../components/chat/UserList.vue";
+import { useServerStore } from "@/stores/server";
+import ChatList from "../components/chat/ChatList.vue";
+
+const server = useServerStore();
+server.listenUsersUpdate();
+server.listenToChatRequests();
 </script>
 
 <template>
   <section class="w-full">
-    <UserList />
+    <chat-list />
   </section>
 </template>
