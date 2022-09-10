@@ -16,5 +16,5 @@ body {
 }
 
 #app {
-  @apply relative top-32 h-full w-80 sm:w-96;
+  @apply relative top-32 h-full w-full;
 }

@@ -8,9 +8,9 @@ import { RouterView } from "vue-router";
       {{ $t("base-layout.title") }}
     </h1>
   </header>
-  <main class="flex w-full justify-center">
+  <div class="flex justify-center">
     <RouterView />
-  </main>
+  </div>
   <footer class="mt-20 flex w-full justify-center p-2 text-xs font-thin text-slate-300">
     <span>{{ $t("base-layout.footer") }}&nbsp;</span>
     <a

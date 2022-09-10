@@ -5,5 +5,5 @@ login:
   usernameInput: Username
   buttonLogin: Enter
 chat:
-  buttonEnterChat: Ask to talk
-  noUsers: No users available
+  messageInputPlaceholder: Type a message
+  noUserSelected: Select one person
