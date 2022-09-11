@@ -18,3 +18,12 @@ body {
 #app {
   @apply relative top-32 h-full w-full;
 }
+
+/* Code for Firefox */
+::-moz-selection {
+  @apply bg-yellow-300 text-white;
+}
+
+::selection {
+  @apply bg-yellow-300 text-white;
+}
