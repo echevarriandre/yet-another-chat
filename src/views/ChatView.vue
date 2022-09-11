@@ -8,9 +8,23 @@ const { users } = useChatStore();
 let message = $ref("");
 let selectedUser = $ref<User | null>(null);
 
+socket.on(SC.Users, (activeUsers: User[]) => {
+  activeUsers.forEach((u) => {
+    u.messages = [];
+  });
+  users.push(...activeUsers);
+  socket.off(SC.Users);
+});
+
 socket.on(SC.UserConnected, (user: User) => {
   user.messages = [];
   users.push(user);
+});
+
+socket.on(SC.UserDisconnected, (userId: string) => {
+  const index = users.findIndex((u) => u.id === userId);
+  users.splice(index, 1);
+  if (selectedUser?.id === userId) selectedUser = null;
 });
 
 socket.on(SC.Message, (message, from) => {
