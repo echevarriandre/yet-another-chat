@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+import { RouterView, useRouter } from "vue-router";
+import { RouteNames } from "./router/routes";
 import socket from "./socket";
 import { useChatStore } from "./stores/chat";
 import { SC } from "./types";
@@ -11,10 +12,12 @@ if (sessionId) {
 }
 
 const chatStore = useChatStore();
+const router = useRouter();
 socket.on(SC.Session, (sessionId, userId) => {
   socket.auth = { sessionId };
   chatStore.userId = userId;
   sessionStorage.setItem("sessionId", sessionId);
+  router.push({ name: RouteNames.Chat });
 });
 
 socket.on("connect", () => {

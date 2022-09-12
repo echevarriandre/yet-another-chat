@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouteNames } from "@/router/routes";
 import socket from "@/socket";
 import { useRouter } from "vue-router";
 import TButton from "../components/ui/t-button.vue";
@@ -17,9 +16,9 @@ function login() {
   if (!username) return;
 
   // TODO save user to chat store
+  // TODO show loading in button
   socket.auth = { username: username };
   socket.connect();
-  router.push({ name: RouteNames.Chat });
 }
 
 onUnmounted(() => {
