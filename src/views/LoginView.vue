@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import socket from "@/socket";
-import { useRouter } from "vue-router";
 import TButton from "../components/ui/t-button.vue";
 import TInput from "../components/ui/t-input.vue";
 
 const username = $ref("");
-const router = useRouter();
 
 socket.on("connect_error", (error) => {
   // TODO handle error
