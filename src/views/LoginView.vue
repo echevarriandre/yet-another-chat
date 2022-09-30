@@ -29,8 +29,8 @@ onUnmounted(() => {
 <template>
   <section class="flex w-96 flex-col items-center gap-10">
     <form @submit.prevent class="flex w-full flex-col gap-5">
-      <TInput :label="$t('login.usernameInput')" v-model="username" @keyup.enter="login" type="text" required />
-      <TButton @click="login" :disabled="!username">{{ $t("login.buttonLogin") }}</TButton>
+      <TInput :label="$t('login.username-input')" v-model="username" @keyup.enter="login" type="text" required />
+      <TButton @click="login" :disabled="!username">{{ $t("login.button-login") }}</TButton>
     </form>
   </section>
 </template>

@@ -2,11 +2,12 @@ base-layout:
   title: Yet Another Chat
   footer: made by
 login:
-  usernameInput: Username
-  buttonLogin: Enter
+  username-input: Username
+  button-login: Enter
 chat:
-  messageInputPlaceholder: Type a message
-  noUserSelected: Select one person
+  message-input-placeholder: Type a message
+  no-user-selected: Select one person
   greeting: Hello
   connected: connected
   disconnected: disconnected
+  no-users: No persons

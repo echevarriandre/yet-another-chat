@@ -81,9 +81,14 @@ onUnmounted(() => {
     </header>
 
     <div class="flex gap-10">
-      <aside class="h-full min-h-[24rem] w-72 overflow-auto rounded-2xl bg-slate-100 md:w-52">
-        <ul class="mt-2 flex flex-col gap-2">
+      <aside
+        class="flex h-full min-h-[24rem] w-72 overflow-auto rounded-2xl bg-slate-100 md:w-52"
+        :class="{ 'items-center': chatStore.users.length == 0 }"
+      >
+        <ul class="mt-2 flex w-full flex-col gap-2">
+          <span v-if="chatStore.users.length == 0" class="text-center text-gray-400">{{ $t("chat.no-users") }}</span>
           <li
+            v-else
             v-for="u in chatStore.users"
             :key="u.id"
             @click="handleSelectUser(u)"
@@ -101,7 +106,7 @@ onUnmounted(() => {
           class="flex h-full flex-col-reverse gap-2 overflow-auto rounded-lg"
           :class="{ 'items-center justify-center': !selectedUser }"
         >
-          <span v-if="!selectedUser" class="text-gray-400">{{ $t("chat.noUserSelected") }}</span>
+          <span v-if="!selectedUser" class="text-gray-400">{{ $t("chat.no-user-selected") }}</span>
           <div
             v-else
             v-for="(m, i) in [...selectedUser?.messages].reverse()"
@@ -117,7 +122,7 @@ onUnmounted(() => {
             type="text"
             v-model="message"
             @keyup.enter="sendMessage"
-            :placeholder="$t('chat.messageInputPlaceholder')"
+            :placeholder="$t('chat.message-input-placeholder')"
             class="h-fit w-full rounded-lg bg-slate-200 p-2 transition duration-200 hover:bg-white hover:ring hover:ring-slate-200 focus:bg-white focus:ring focus:ring-slate-200 disabled:text-slate-600"
           />
           <TButton @click="sendMessage">Send</TButton>
