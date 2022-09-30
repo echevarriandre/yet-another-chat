@@ -7,3 +7,6 @@ login:
 chat:
   messageInputPlaceholder: Type a message
   noUserSelected: Select one person
+  greeting: Hello
+  connected: connected
+  disconnected: disconnected

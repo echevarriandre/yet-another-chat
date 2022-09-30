@@ -17,11 +17,14 @@ socket.on(SC.Session, (sessionId, userId) => {
   socket.auth = { sessionId };
   chatStore.userId = userId;
   sessionStorage.setItem("sessionId", sessionId);
+  const username = sessionStorage.getItem("username");
+  if (username) chatStore.username = username;
   router.push({ name: RouteNames.Chat });
 });
 
 socket.on("connect", () => {
   chatStore.connected = true;
+  if (chatStore.username) sessionStorage.setItem("username", chatStore.username);
 });
 
 socket.on("disconnect", () => {

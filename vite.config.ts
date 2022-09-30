@@ -22,12 +22,10 @@ export default defineConfig({
       include: path.resolve(__dirname, "locales/**"),
     }),
     AutoImport({
-      imports: ["vue", "vue-i18n", "vue/macros", { "@iconify/vue": ["Icon"] }],
+      imports: ["vue", "vue-i18n", "vue/macros"],
       dts: "src/auto-imports.d.ts",
       vueTemplate: true,
-      eslintrc: {
-        enabled: true, // <-- this
-      },
+      eslintrc: { enabled: true },
     }),
   ],
 });

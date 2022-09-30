@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import socket from "@/socket";
+import { useChatStore } from "@/stores/chat";
 import TButton from "../components/ui/t-button.vue";
 import TInput from "../components/ui/t-input.vue";
 
@@ -10,11 +11,12 @@ socket.on("connect_error", (error) => {
   alert(error.message);
 });
 
+const chatStore = useChatStore();
 function login() {
   if (!username) return;
 
-  // TODO save user to chat store
   // TODO show loading in button
+  chatStore.username = username;
   socket.auth = { username: username };
   socket.connect();
 }
